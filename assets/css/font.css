@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'LibreBaskerville-Bold';
+  src: url('/assets/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'LibreBaskerville-Italic';
+  src: url('/assets/fonts/Libre_Baskerville/LibreBaskerville-Italic.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'LibreBaskerville-Regular';
+  src: url('/assets/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSans-Italic';
+  src: url('/assets/fonts/NotoSans-Italic.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'NotoSansThai';
+  src: url('/assets/fonts/NotoSansThai-VariableFont.ttf') format('truetype');
+}
+
+
+.font-lb-b {
+  font-family: 'LibreBaskerville-Bold', serif;
+}
+
+.font-lb-i {
+  font-family: 'LibreBaskerville-Italic', serif;
+}
+
+.font-lb-r {
+  font-family: 'LibreBaskerville-Regular', serif;
+}
+
+.font-noto {
+  font-family: 'NotoSans-Italic', sans-serif;
+}
+
+.font-noto-thai {
+  font-family: 'NotoSansThai', sans-serif;
+}
