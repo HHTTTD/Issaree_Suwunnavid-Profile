@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         type();
-        observer.unobserve(el); // ✅ หยุดสังเกตหลังพิมพ์แล้ว
+        observer.unobserve(el); 
       }
     });
   }, {
-    threshold: 0.5, // เริ่มทำงานเมื่อเห็นครึ่งนึงของ element
+    threshold: 1, 
   });
 
   elements.forEach(el => {
