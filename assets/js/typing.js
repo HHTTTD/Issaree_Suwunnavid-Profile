@@ -1,22 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(".typing-effect");
 
-  elements.forEach(el => {
-    const text = el.dataset.text || "";
-    let index = 0;
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const text = el.dataset.text || "";
+        const speed = parseInt(el.dataset.speed) || 100;
+        let index = 0;
 
-    function type() {
-      // ป้องกันเกิน: ตรวจสอบว่า index อยู่ในช่วงที่ถูกต้อง
-      if (index <= text.length) {
-        el.textContent = text.substring(0, index);
-        index++;
-        // ตรวจสอบว่าไม่เกินจริง ๆ ก่อนตั้ง timeout ถัดไป
-        if (index <= text.length) {
-          setTimeout(type, 50); // คุณสามารถลดเหลือ 50 ได้
+        function type() {
+          if (index <= text.length) {
+            el.textContent = text.substring(0, index);
+            index++;
+            if (index <= text.length) {
+              setTimeout(type, speed);
+            }
+          }
         }
-      }
-    }
 
-    type();
+        type();
+        observer.unobserve(el); // ✅ หยุดสังเกตหลังพิมพ์แล้ว
+      }
+    });
+  }, {
+    threshold: 0.5, // เริ่มทำงานเมื่อเห็นครึ่งนึงของ element
+  });
+
+  elements.forEach(el => {
+    observer.observe(el);
   });
 });
