@@ -32,4 +32,8 @@
     .ipad\:w-full {
       width: 100%;
     }
+
+    .pt1{
+    padding-top: 0px;
+    }
   }
